@@ -33,7 +33,7 @@ export function useWorkerConnector() {
   }
 
   const host = computed(() => {
-    return $slidev.configs.reaction?.host ?? 'localhost:8787'
+    return $slidev.configs.reaction?.host ?? 'r.reisan.dev'
   })
 
   const isConnected = computed(() => !!webSocket)
