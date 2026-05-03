@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import QRCode from 'qrcode'
+import { toDataURL } from 'qrcode'
 import { ref, watch } from 'vue';
 import { useDarkMode } from '@slidev/client'
 
@@ -16,7 +16,7 @@ watch(isDark, async () => {
   const backgroundValue = getComputedStyle(document.documentElement)
     .getPropertyValue('--slidev-code-background')
     .trim()
-  qrCodeString.value = await QRCode.toDataURL(text, { color: { light: backgroundValue, dark: foregroundValue } })
+  qrCodeString.value = await toDataURL(text, { color: { light: backgroundValue, dark: foregroundValue } })
 }, { immediate: true })
 </script>
 
