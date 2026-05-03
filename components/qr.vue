@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import qrImage from './qrImage.vue';
 
-const { roomId } = defineProps({
+const { roomId, host } = defineProps({
   roomId: {
     type: String,
     required: true
@@ -21,7 +21,7 @@ const { roomId } = defineProps({
       </div>
     </div>
     <div class="border-4 rounded-md my-2">
-      <qrImage :text="`${host}/${roomId}`" />
+      <qrImage :text="`${host}/?roomId=${roomId}`" />
     </div>
     <div class="text-xl my-2">
       {{ roomId }}
