@@ -10,7 +10,7 @@ This addon brings reactions to your slidev.
 
 ## How to use
 
-1. Add `raection` to headmatter.
+1. Add `reaction` to `addons` headmatter.
 2. THAT'S IT.
 
 ## You can
@@ -23,7 +23,7 @@ Just use `layout: qr`.
 
 ### 2. Disable the reaction bar per-page
 
-Just use `reaction: false`.
+Just use `reaction: false` for page frontmatter.
 
 ### X. To Be Written
 
