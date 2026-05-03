@@ -1,6 +1,6 @@
 {
   "name": "slidev-addon-reaction",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Reaction for Slidev",
   "homepage": "https://r.reisan.dev",
   "repository": {
@@ -22,14 +22,12 @@
     "slidev"
   ],
   "peerDependencies": {
-    "vue": "^3.5.29",
-    "@slidev/client": "^52.14.2"
+    "@slidev/client": "^52.14.2",
+    "vue": "^3.5.29"
   },
   "dependencies": {
     "@iconify/vue": "^5.0.0",
-    "qrcode": "^1.5.4",
-    "vue": "^3.5.29",
-    "@slidev/cli": "^52.14.2"
+    "uqr": "^0.1.3"
   },
   "packageManager": "pnpm@10.33.2"
 }

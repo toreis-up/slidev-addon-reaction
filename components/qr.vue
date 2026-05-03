@@ -20,7 +20,7 @@ const { roomId, host } = defineProps({
         {{ host }}
       </div>
     </div>
-    <div class="border-4 rounded-md my-2">
+    <div class="border-4 rounded-md my-2 w-36">
       <qrImage :text="`${host}/?roomId=${roomId}`" />
     </div>
     <div class="text-xl my-2">

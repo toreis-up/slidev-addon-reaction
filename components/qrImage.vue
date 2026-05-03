@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import * as QRCode from 'qrcode'
-import { ref, watch } from 'vue';
+import { renderSVG } from 'uqr'
+import { ref, computed, watch } from 'vue';
 import { useDarkMode } from '@slidev/client'
 
 const { isDark } = useDarkMode()
 
-const qrCodeString = ref('');
+const qrSvg = ref('');
 
 const { text } = defineProps({ text: { type: String, required: true } })
 
@@ -16,10 +16,23 @@ watch(isDark, async () => {
   const backgroundValue = getComputedStyle(document.documentElement)
     .getPropertyValue('--slidev-code-background')
     .trim()
-  qrCodeString.value = await QRCode.toDataURL(text, { color: { light: backgroundValue, dark: foregroundValue } })
+
+  qrSvg.value = renderSVG('http://example.com' ?? text, {
+    blackColor: foregroundValue,
+    whiteColor: backgroundValue,
+    border: 4,
+    pixelSize: 8
+  })
 }, { immediate: true })
 </script>
 
 <template>
-  <img :src="qrCodeString" />
+  <div v-html="qrSvg" class="qr-image" />
 </template>
+
+<style scoped>
+.qr-image :deep(svg) {
+  width: 100%;
+  height: 100%;
+}
+</style>
