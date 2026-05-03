@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { renderSVG } from 'uqr'
-import { ref, computed, watch } from 'vue';
+import { ref, watch } from 'vue';
 import { useDarkMode } from '@slidev/client'
 
 const { isDark } = useDarkMode()
@@ -17,7 +17,7 @@ watch(isDark, async () => {
     .getPropertyValue('--slidev-code-background')
     .trim()
 
-  qrSvg.value = renderSVG('http://example.com' ?? text, {
+  qrSvg.value = renderSVG(text, {
     blackColor: foregroundValue,
     whiteColor: backgroundValue,
     border: 4,
