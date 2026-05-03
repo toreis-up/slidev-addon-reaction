@@ -7,9 +7,9 @@ const { isDark } = useDarkMode()
 
 const qrSvg = ref('');
 
-const { text } = defineProps({ text: { type: String, required: true } })
+const props = defineProps({ text: { type: String, required: true } })
 
-watch(isDark, async () => {
+watch([() => props.text, isDark], async () => {
   const foregroundValue = getComputedStyle(document.documentElement)
     .getPropertyValue('--slidev-code-foreground')
     .trim()
@@ -17,7 +17,7 @@ watch(isDark, async () => {
     .getPropertyValue('--slidev-code-background')
     .trim()
 
-  qrSvg.value = renderSVG(text, {
+  qrSvg.value = renderSVG(props.text, {
     blackColor: foregroundValue,
     whiteColor: backgroundValue,
     border: 4,
