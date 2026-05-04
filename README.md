@@ -19,13 +19,23 @@ This addon brings reactions to your slidev.
 
 Just use `layout: qr`.
 
-[[ To Be Added the layout here ]]
+![./demo/layout_qr.png]
 
 ### 2. Disable the reaction bar per-page
 
 Just use `reaction: false` for page frontmatter.
 
-### X. To Be Written
+### 3. Change the host
+
+Default reaction host is `r.reisan.dev` by @toreis-up hosted on Cloudflare Workers.
+
+I don't collect and analyze any data on default reaction server.
+
+But you can host the server yourself :) (incl. UI)
+
+Please refer [slidev-addon-reaction-server](https://github.com/toreis-up/slidev-addon-reaction-server).
+
+### X. To be added (Can be changed the reaction)
 
 The word "QR Code" is registered trademark of:
 DENSO WAVE INCORPORATED
