@@ -19,7 +19,7 @@ This addon brings reactions to your slidev.
 
 Just use `layout: qr`.
 
-![./demo/layout_qr.png]
+![](./demo/layout_qr.png)
 
 ### 2. Disable the reaction bar per-page
 
